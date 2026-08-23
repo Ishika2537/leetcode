@@ -6,17 +6,10 @@ class Solution {
 
         for (int i = 0; i < n; i++) {
             if (num.charAt(i) == '?') {
-                if (i < n / 2)
-                    qDiff++;
-                else
-                    qDiff--;
+                qDiff += (i < n / 2) ? 1 : -1;
             } else {
                 int digit = num.charAt(i) - '0';
-
-                if (i < n / 2)
-                    diff += digit;
-                else
-                    diff -= digit;
+                diff += (i < n / 2) ? digit : -digit;
             }
         }
 
